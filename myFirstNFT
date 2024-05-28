@@ -1,0 +1,44 @@
+// Create a variable to hold your NFTs
+let nfts = [];
+
+/* This function will take in some values as parameters, create an
+   NFT object using the parameters passed to it for its metadata, 
+   and store it in the variable above. */
+function mintNFT(_name, _artist, _description, _dateCreated) {
+    const nft = {
+        name: _name,
+        artist: _artist,
+        description: _description,
+        dateCreated: _dateCreated
+    };
+    nfts.push(nft);
+    console.log(`Minted NFT: ${_name}`);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    nfts.forEach(nft => {
+        console.log(`Name: ${nft.name}`);
+        console.log(`Artist: ${nft.artist}`);
+        console.log(`Description: ${nft.description}`);
+        console.log(`Date Created: ${nft.dateCreated}`);
+        console.log('---');
+    });
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log(`Total NFTs minted: ${nfts.length}`);
+}
+
+// Call your functions below this line
+mintNFT("Sunset Bliss", "Artist A", "A beautiful sunset over the mountains.", "2024-05-28");
+mintNFT("Ocean Waves", "Artist B", "Waves crashing on the shore.", "2024-05-29");
+mintNFT("Morning Dew", "Artist C", "Dew drops on a leaf.", "2024-05-29");
+mintNFT("Mountain Peak", "Artist D", "A view from the top of the mountain.", "2024-05-30");
+
+
+
+listNFTs();
+getTotalSupply();
